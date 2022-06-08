@@ -2,30 +2,30 @@ _metadata:
   major_version: 1
   minor_version: 1
 display_information:
-  name: Tasks
+  name: Payments
 features:
   app_home:
     home_tab_enabled: true
     messages_tab_enabled: true
     messages_tab_read_only_enabled: true
   bot_user:
-    display_name: Tasks
+    display_name: Payments
     always_online: false
   shortcuts:
-    - name: Create a task
+    - name: Request Stripe access
       type: global
-      callback_id: global_new_task
-      description: Quickly add a task to your list
-    - name: Create a task
+      callback_id: global_new_request_access
+      description: Quickly requesting Stripe access
+    - name: Request Stripe access
       type: message
-      callback_id: message_new_task
-      description: Create a task from this message
+      callback_id: message_new_request_access
+      description: Request Stripe access from this message
 oauth_config:
   scopes:
     bot:
-      # Allows us to add the shortcuts for creating tasks
+      # Allows us to add the shortcuts for creating request
       - commands
-      # Allows us to send task reminders via a DM from the bot
+      # Allows us to send approval reminders via a DM from the bot
       - chat:write
 settings:
   event_subscriptions:
